@@ -42,7 +42,7 @@ describe("dice-game", () => {
 
   const connection = provider.connection;
 
-  const program = anchor.workspace.AnchorDiceGame as Program<AnchorDice>;
+  const program = anchor.workspace.AnchorDice as Program<AnchorDice>;
   const house = Keypair.generate();
   const player = Keypair.generate();
   const seed = new BN(randomBytes(16));
