@@ -34,4 +34,12 @@ pub mod anchor_dice {
     pub fn refund_bet(ctx: Context<RefundBet>) -> Result<()> {
         ctx.accounts.refund_bet(&ctx.bumps)
     }
+
+    pub fn resolve_bet(ctx: Context<ResolveBet>) -> Result<()> {
+        ctx.accounts.resolve_bet(&ctx.bumps)
+    }
+
+    pub fn reveal(ctx: Context<Reveal>, preimage: Vec<u8>) -> Result<()> {
+        ctx.accounts.reveal(preimage)
+    }
 }
