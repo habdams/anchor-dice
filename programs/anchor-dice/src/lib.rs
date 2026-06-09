@@ -15,7 +15,7 @@ declare_id!("52rkTgNgRkAyrPjNw53FDPidmPXrPLhTfmk48py1E8L9");
 pub mod anchor_dice {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn initialize(ctx: Context<Initialize>, amount: u64) -> Result<()> {
+        ctx.accounts.initialize(amount)
     }
 }
