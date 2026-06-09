@@ -30,4 +30,8 @@ pub mod anchor_dice {
             .create_bet(seed, &ctx.bumps, guess_roll, amount, commitment)?;
         ctx.accounts.deposit(amount)
     }
+
+    pub fn refund_bet(ctx: Context<RefundBet>) -> Result<()> {
+        ctx.accounts.refund_bet(&ctx.bumps)
+    }
 }
