@@ -18,4 +18,16 @@ pub mod anchor_dice {
     pub fn initialize(ctx: Context<Initialize>, amount: u64) -> Result<()> {
         ctx.accounts.initialize(amount)
     }
+
+    pub fn place_bet(
+        ctx: Context<PlaceBet>,
+        seed: u128,
+        amount: u64,
+        guess_roll: u8,
+        commitment: [u8; 32],
+    ) -> Result<()> {
+        ctx.accounts
+            .create_bet(seed, &ctx.bumps, guess_roll, amount, commitment)?;
+        ctx.accounts.deposit(amount)
+    }
 }
